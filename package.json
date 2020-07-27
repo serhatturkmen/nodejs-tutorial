@@ -1,0 +1,12 @@
+{
+    "description": "tutorial",
+    "author": {
+        "name": "dot",
+        "email": "serhat_21_88@hotmail.com"
+    },
+    "dependencies": {
+        "ejs": "^3.1.3",
+        "express": "^4.17.1",
+        "nodemon": "^2.0.4"
+    }
+}

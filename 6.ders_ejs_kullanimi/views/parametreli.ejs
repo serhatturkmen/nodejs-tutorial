@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+</head>
+<body>
+    <%= mesaj %>
+    <p>İsimler</p>
+    <ul>
+    <% for(var i=0; i < kisi.length; i++){ %>
+        <li><%= kisi[i] %></li>
+    <% } %>
+    </ul>
+
+<%# yorum satırıdır. %>
+    <% var metin = 'deneme'; %>
+    <%= metin %>
+</body>
+</html>
