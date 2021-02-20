@@ -1,26 +1,17 @@
 var express = require("express");
 var path = require("path");
+var bodyParser = require("body-parser");
 var app = express();
-var controllermain = require("./controllers/main");
-/*
------------------------
-Kurulumu
-npm install ejs --save
------------------------
-ejs
-Şablon ve html render için kullanılan
-görüntüleme kütüphanesidir.
-Html ile nodejs arasındaki veri
-arayüzünü sağlıyor.
 
-ekrana yazı yazmak için 
-<%= metin %>
+//şablon kullanılması için kütüphaneyi değişkene aktarma
+var ejsLayout = require("express-ejs-layouts");
 
-for veya farklı işlemler için
-<% for(int i=0; i< kisiler.lenth(); i++){ %>
-    <%= kisiler[i] %>
-<% } %>
-*/
+//şablon kullanılacağının belirtilmesi
+app.use(ejsLayout);
+
+// body-parse kullanımı
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 // görüntüleme motoronu belirtilmesi
 app.set("view engine", "ejs");
@@ -40,8 +31,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get("/", controllermain.index);
-app.get("/parametreli", controllermain.parametre);
+require("./Route/RouteManager")(app);
 
 app.listen(3000, function () {
   console.log("Sunucu http://127.0.0.1:3000 adresinde çalışıyor.");

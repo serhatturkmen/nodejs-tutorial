@@ -41,9 +41,11 @@ app.set('views', path.join(__dirname, './views'));
 gelen her isteğe karşı loglama yapar.
 */
 app.use(function(req, res, next){
+    console.log("-------------");
     console.log("Gelen istek.:"+req.url);
     var datetime = new Date();
     console.log("Zamanı......:"+datetime);
+    console.log("-------------");
     next();
 });
 

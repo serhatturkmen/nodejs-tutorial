@@ -1,8 +1,8 @@
 module.exports.index = function(req, res){
-    res.render('index');
+    res.render('index', {mesaj: "Anasayfa Yönlendirmesi"});
 }
 
 module.exports.parametre = function(req, res){
-    var kisi = ['Test', 'Mehmet', 'Veli'];
+    var kisi = ['Ahmet', 'Mehmet', 'Veli'];
     res.render('parametreli',  {kisi: kisi, mesaj: 'Şablon kullanımı öğreniyorum.' });
 }
