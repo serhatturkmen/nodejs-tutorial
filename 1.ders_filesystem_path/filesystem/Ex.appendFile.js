@@ -6,7 +6,7 @@ appendfile(filepath, content, function(err){});
 dosyaya content değişken içeriğini ekler. Eğer 
 yoksa ise dosyayı oluşturup dosya içeriğine 
 content değişkeninin içeriğini ekler ve kaydeder.
--> Bu metod readfileSync gibi asekron olmadığından
+-> Bu metod appnedfileSync gibi asekron olmadığından
 işlem devam ederken bir sonraki satırdaki işleme
 geçer.
 ::::::::::Bir dipnot::::::::::
